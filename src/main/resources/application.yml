@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 60m
+
+spring:
+  application:
+    name: aiguanli
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/aiguanli?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+aiguanli:
+  sprint: 3
+  title: 爱管理 · Sprint 3
+  llm:
+    base-url: https://api.deepseek.com/v1
+    model: deepseek-chat
+    api-key: ${AIGUANLI_LLM_API_KEY:}
